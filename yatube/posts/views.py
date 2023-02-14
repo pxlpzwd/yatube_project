@@ -10,6 +10,7 @@ def index(request):
 
 # Страница со списком мороженого
 def group_posts(request, slug):
-    return HttpResponse('не главная')
+    template = 'posts/group_list.html'
+    return render(request, template)
 
 
