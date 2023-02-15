@@ -52,10 +52,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'yatube.urls'
 
+# Путь к директории с шаблонами вынесен в переменную:
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Добавлено: Искать шаблоны на уровне проекта
         'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -119,6 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# Включение статических файлов в шаблон с помощью {% load static %}
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
